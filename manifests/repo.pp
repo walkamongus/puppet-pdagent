@@ -13,6 +13,7 @@ class pdagent::repo {
       } ->
       apt::source { 'pdagent':
         location => 'http://packages.pagerduty.com/pdagent',
+        release  => '',
         repos    => 'deb',
         key      => '34241874978E85F344483D714037B2209E65C6CB',
       }
