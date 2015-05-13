@@ -1,5 +1,8 @@
 fixtures:
   repositories:
     stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+    apt:
+      repo: "https://github.com/puppetlabs/puppetlabs-apt.git"
+      branch: "1.8.x"
   symlinks:
     pdagent: "#{source_dir}"

@@ -14,12 +14,10 @@ describe 'pdagent' do
           it { is_expected.to compile.with_all_deps }
 
           it { is_expected.to contain_class('pdagent::params') }
-          it { is_expected.to contain_class('pdagent::install').that_comes_before('pdagent::config') }
-          it { is_expected.to contain_class('pdagent::config') }
-          it { is_expected.to contain_class('pdagent::service').that_subscribes_to('pdagent::config') }
+          it { is_expected.to contain_class('pdagent::repo').that_comes_before('pdagent::install') }
+          it { is_expected.to contain_class('pdagent::install').that_comes_before('pdagent::service') }
+          it { is_expected.to contain_class('pdagent::service') }
 
-          it { is_expected.to contain_service('pdagent') }
-          it { is_expected.to contain_package('pdagent').with_ensure('present') }
         end
       end
     end

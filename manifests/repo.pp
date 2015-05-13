@@ -21,6 +21,7 @@ class pdagent::repo {
     }
     'RedHat', 'Amazon': {
       yumrepo { 'pdagent':
+        ensure   => present,
         name     => 'PDAgent',
         baseurl  => 'http://packages.pagerduty.com/pdagent/rpm',
         enabled  => true,
