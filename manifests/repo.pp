@@ -11,14 +11,14 @@ class pdagent::repo {
         key        => '34241874978E85F344483D714037B2209E65C6CB',
         key_source => 'http://packages.pagerduty.com/GPG-KEY-pagerduty',
       } ->
-      apt::source { 'pagerduty':
+      apt::source { 'pdagent':
         location => 'http://packages.pagerduty.com/pdagent',
         repos    => 'deb',
         key      => '34241874978E85F344483D714037B2209E65C6CB',
       }
     }
     'RedHat', 'Amazon': {
-      yumrepo { 'pagerduty':
+      yumrepo { 'pdagent':
         name     => 'PDAgent',
         baseurl  => 'http://packages.pagerduty.com/pdagent/rpm',
         enabled  => true,
