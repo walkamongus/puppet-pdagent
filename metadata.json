@@ -4,9 +4,9 @@
   "author": "Chadwick Banning",
   "summary": "Puppet module for installing and managing the PagerDuty agent",
   "license": "Apache 2.0",
-  "source": "",
-  "project_page": "",
-  "issues_url": "",
+  "source": "git@github.com:walkamongus/puppet-pdagent.git",
+  "project_page": "https://github.com/walkamongus/puppet-pdagent",
+  "issues_url": "https://github.com/walkamongus/puppet-pdagent/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
