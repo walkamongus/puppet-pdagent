@@ -7,13 +7,14 @@ class pdagent::repo {
   case $::osfamily {
     'Debian': {
       include ::apt
+      apt::key { 'pagerduty':
+        key        => '34241874978E85F344483D714037B2209E65C6CB',
+        key_source => 'http://packages.pagerduty.com/GPG-KEY-pagerduty',
+      } ->
       apt::source { 'pagerduty':
         location => 'http://packages.pagerduty.com/pdagent',
         repos    => 'deb',
-        key      => {
-          'id'     => '34241874978E85F344483D714037B2209E65C6CB',
-          'server' => 'http://packages.pagerduty.com/GPG-KEY-pagerduty',
-        },
+        key      => '34241874978E85F344483D714037B2209E65C6CB',
       }
     }
     'RedHat', 'Amazon': {
