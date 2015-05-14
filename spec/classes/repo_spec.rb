@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'pdagent::repo' do
+describe 'pdagent' do
   context 'supported operating systems' do
     on_supported_os.each do |os, facts|
       context "on #{os}" do
@@ -37,17 +37,6 @@ describe 'pdagent::repo' do
 
         end
       end
-    end
-  end
-
-  context 'unsupported operating system' do
-    describe 'pdagent class without any parameters on Solaris/Nexenta' do
-      let(:facts) {{
-        :osfamily        => 'Solaris',
-        :operatingsystem => 'Nexenta',
-      }}
-
-      it { expect { is_expected.to contain_package('pdagent') }.to raise_error(Puppet::Error, /Nexenta not supported/) }
     end
   end
 end
