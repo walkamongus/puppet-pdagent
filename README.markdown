@@ -39,6 +39,9 @@ Install the PagerDuty agent and ensure the pdagent service is running
 
 ## Limitations
 
+Supports Puppet:
+* >= 3.5.1
+
 This module has been tested on:
 * RedHat 6,7
 * Debian 6,7
