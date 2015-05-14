@@ -35,7 +35,7 @@ The PagerDuty agent is a daemon that enables PagerDuty integration with system a
 
 Install the PagerDuty agent and ensure the pdagent service is running
 
-    class {'::pdagent': }
+    class { '::pdagent': }
 
 ## Limitations
 
