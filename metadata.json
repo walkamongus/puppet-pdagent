@@ -1,6 +1,6 @@
 {
   "name": "walkamongus-pdagent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Chadwick Banning",
   "summary": "Puppet module for installing and managing the PagerDuty agent",
   "license": "Apache-2.0",
@@ -8,6 +8,12 @@
   "project_page": "https://github.com/walkamongus/puppet-pdagent",
   "issues_url": "https://github.com/walkamongus/puppet-pdagent/issues",
   "tags": [ "pagerduty", "pdagent" ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.5.1"
+    }
+  ],
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
