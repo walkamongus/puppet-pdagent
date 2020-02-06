@@ -9,10 +9,10 @@ class pdagent::repo {
       include ::apt
       apt::key { 'pagerduty':
         key        => '34241874978E85F344483D714037B2209E65C6CB',
-        key_source => 'http://packages.pagerduty.com/GPG-KEY-pagerduty',
-      } ->
-      apt::source { 'pdagent':
-        location    => 'http://packages.pagerduty.com/pdagent',
+        key_source => 'https://packages.pagerduty.com/GPG-KEY-pagerduty',
+      }
+      -> apt::source { 'pdagent':
+        location    => 'https://packages.pagerduty.com/pdagent',
         release     => '',
         repos       => 'deb/',
         include_src => false,
@@ -23,10 +23,10 @@ class pdagent::repo {
       yumrepo { 'pdagent':
         ensure   => present,
         name     => 'PDAgent',
-        baseurl  => 'http://packages.pagerduty.com/pdagent/rpm',
+        baseurl  => 'https://packages.pagerduty.com/pdagent/rpm',
         enabled  => true,
         gpgcheck => true,
-        gpgkey   => 'http://packages.pagerduty.com/GPG-KEY-RPM-pagerduty',
+        gpgkey   => 'https://packages.pagerduty.com/GPG-KEY-RPM-pagerduty',
       }
     }
     default: {
