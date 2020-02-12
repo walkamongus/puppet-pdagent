@@ -10,6 +10,7 @@
 class pdagent (
   String $package_name                     = $::pdagent::params::package_name,
   String $integrations_package_name        = $::pdagent::params::integrations_package_name,
+  Boolean $install_integrations_package    = $::pdagent::params::install_integrations_package,
   String $service_name                     = $::pdagent::params::service_name,
   Boolean $manage_repo                     = $::pdagent::params::manage_repo,
   String $config_filename                  = $::pdagent::params::config_filename,
@@ -27,7 +28,10 @@ class pdagent (
     $service_name
   )
 
-  validate_bool($manage_repo)
+  validate_bool(
+    $manage_repo,
+    $install_integrations_package
+  )
 
   if $manage_repo {
     class { '::pdagent::repo': }
