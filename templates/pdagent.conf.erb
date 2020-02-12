@@ -1,0 +1,32 @@
+#
+# PagerDuty Agent Config
+#
+
+[Main]
+
+# How often the send queue is checked and events sent to PagerDuty
+send_interval_secs = <%= @send_interval_secs %>
+
+# How often the cleanup is run on the send queue
+# The default is 3 hours (= 10800 seconds)
+cleanup_interval_secs = <%= @cleanup_interval_secs %>
+
+# How old events must be before they are cleaned up
+# The default is 1 week (= 604800 seconds)
+cleanup_threshold_secs = <%= @cleanup_threshold_secs %>
+
+# How many seconds to back off events in a service key every time a
+# backoff-eligible situation occurs (e.g. throttling of service key, errors in
+# sending out events of service key.)
+backoff_interval_secs = <%= @backoff_interval_secs %>
+
+# Maximum number of times to retry an event in a service key when errors occur,
+# before any potential stringent action, like marking an event as bad, happens.
+# (Note: only applicable to errors, not when service keys are throttled by
+# PagerDuty.)
+retry_limit_for_possible_errors = <%= @retry_limit_for_possible_errors %>
+
+# Source address used when connecting to PagerDuty. Use 0.0.0.0 if you want to
+# let your OS choosing the source address automaticaly.
+# NOTE - ignored on python2.6 envs
+source_address = <%= @source_address %>
