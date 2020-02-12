@@ -12,6 +12,7 @@ class pdagent::params {
   $manage_repo                     = true
   $package_name                    = 'pdagent'
   $integrations_package_name       = 'pdagent-integrations'
+  $install_integrations_package    = true
   $service_name                    = 'pdagent'
   $config_filename                 = '/etc/pdagent.conf'
   $send_interval_secs              = 10

@@ -8,8 +8,9 @@ class pdagent::install {
     ensure => present,
   }
 
-  package { $::pdagent::integrations_package_name:
-    ensure => present,
+  if $::pdagent::params::install_integrations_package {
+    package { $::pdagent::integrations_package_name:
+      ensure => present,
+    }
   }
-
 }
